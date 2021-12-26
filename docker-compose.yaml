@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  test:
+    build: .
+    command: sh -c "python3.10 -m pytest"
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
