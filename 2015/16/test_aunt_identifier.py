@@ -1,6 +1,6 @@
+from collections.abc import Callable
 from dataclasses import dataclass
 from os.path import dirname, join
-from typing import Callable
 
 AttributeDict = dict[str, int]
 

@@ -1,6 +1,6 @@
+from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from os.path import dirname, join
-from typing import Callable, Mapping, Union
 
 from pytest import fixture, raises
 
@@ -19,7 +19,7 @@ class Range:
 
 FixedLights = list[list[bool]]
 VariableLights = list[list[int]]
-Lights = Union[FixedLights, VariableLights]
+Lights = FixedLights | VariableLights
 
 
 def process_instruction(instruction: str, lights: Lights, command_map: Mapping[str, Callable]) -> Lights:

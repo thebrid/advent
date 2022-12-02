@@ -1,5 +1,5 @@
+from collections.abc import Iterable
 from os.path import dirname, join
-from typing import Iterable
 
 from pytest import mark
 

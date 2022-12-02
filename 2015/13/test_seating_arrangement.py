@@ -1,6 +1,6 @@
 from collections import defaultdict
+from collections.abc import MutableMapping
 from itertools import permutations
-from typing import MutableMapping
 
 from pytest import mark
 

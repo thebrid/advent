@@ -1,8 +1,8 @@
 from collections import defaultdict
+from collections.abc import MutableMapping
 from dataclasses import dataclass
 from enum import Enum
 from re import Pattern, compile
-from typing import MutableMapping
 
 from pytest import mark
 

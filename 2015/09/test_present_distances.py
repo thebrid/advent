@@ -1,7 +1,7 @@
 from collections import defaultdict
+from collections.abc import Mapping, MutableMapping
 from dataclasses import dataclass
 from heapq import heapify, heappop, heappush
-from typing import Mapping, MutableMapping
 
 from pytest import mark
 

@@ -1,6 +1,6 @@
+from collections.abc import Iterable
 from dataclasses import dataclass
 from re import compile
-from typing import Iterable
 
 from pytest import mark
 

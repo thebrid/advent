@@ -1,6 +1,6 @@
+from collections.abc import MutableMapping
 from dataclasses import dataclass
 from os.path import dirname, join
-from typing import MutableMapping, Union
 
 from pytest import mark
 
@@ -71,15 +71,15 @@ class VariableExpression:
         return self.evaluation_result
 
 
-Expression = Union[
-    AndExpression,
-    ConstantExpression,
-    LeftShiftExpression,
-    NotExpression,
-    OrExpression,
-    RightShiftExpression,
-    VariableExpression,
-]
+Expression = (
+    AndExpression
+    | ConstantExpression
+    | LeftShiftExpression
+    | NotExpression
+    | OrExpression
+    | RightShiftExpression
+    | VariableExpression
+)
 
 
 def logic_gates(circuit: Circuit, variable: str) -> int:

@@ -1,5 +1,5 @@
+from collections.abc import Iterable
 from enum import Enum
-from typing import Iterable
 
 from pytest import mark
 
@@ -67,6 +67,8 @@ def _get_player_choice(player: str, opponent_choice: Choice) -> Choice:
                     return Choice.Paper
                 case "Z":
                     return Choice.Rock
+
+    raise RuntimeError(f"Found no matching combination of {player=} and {opponent_choice=}")
 
 
 def _get_player_score(opponent_choice: Choice, player_choice: Choice) -> int:

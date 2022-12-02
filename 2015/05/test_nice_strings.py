@@ -1,6 +1,6 @@
 from collections import defaultdict
+from collections.abc import Callable
 from os.path import dirname, join
-from typing import Callable
 
 from pytest import mark
 
