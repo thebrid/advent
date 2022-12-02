@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.10
+    - name: Set up Python 3.11
       uses: actions/setup-python@v2
       with:
-        python-version: "3.10"
+        python-version: "3.11"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -34,7 +34,7 @@ jobs:
         mypy .
     - name: Lint with pyupgrade
       run: |
-        find . -name "*.py" | while read i; do pyupgrade --py310-plus "$i"; done
+        find . -name "*.py" | while read i; do pyupgrade --py311-plus "$i"; done
     - name: Test with pytest
       run: |
         pytest
