@@ -1,5 +1,6 @@
 from collections.abc import Iterable
 from copy import deepcopy
+
 from pytest import mark
 
 

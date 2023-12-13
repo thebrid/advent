@@ -1,6 +1,7 @@
 from collections.abc import Iterable
 from dataclasses import dataclass
 from math import prod
+
 from pytest import mark
 
 
