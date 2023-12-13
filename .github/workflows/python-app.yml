@@ -28,7 +28,7 @@ jobs:
         find . -name "*.py" | while read i; do pyupgrade --py312-plus "$i"; done
     - name: Lint with isort
       run: |
-        isort .
+        isort -c .
     - name: Lint with black
       run: |
         black -l 120 .

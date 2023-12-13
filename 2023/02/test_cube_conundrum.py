@@ -3,8 +3,8 @@ from collections import defaultdict
 from collections.abc import Iterable
 from dataclasses import dataclass
 from math import prod
-from pytest import mark
 
+from pytest import mark
 
 DrawCount = dict[str, int]
 
