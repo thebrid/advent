@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.12
+    - name: Set up Python 3.13
       uses: actions/setup-python@v2
       with:
-        python-version: "3.12"
+        python-version: "3.13"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -25,7 +25,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with pyupgrade
       run: |
-        find . -name "*.py" | while read i; do pyupgrade --py312-plus "$i"; done
+        find . -name "*.py" | while read i; do pyupgrade --py313-plus "$i"; done
     - name: Lint with isort
       run: |
         isort -c .
