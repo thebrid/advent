@@ -9,8 +9,8 @@ Circuit = MutableMapping[str, "Expression"]
 
 @dataclass
 class AndExpression:
-    lhs: "Expression"
-    rhs: "Expression"
+    lhs: Expression
+    rhs: Expression
 
     def evaluate(self, circuit: Circuit) -> int:
         return self.lhs.evaluate(circuit) & self.rhs.evaluate(circuit)
@@ -26,8 +26,8 @@ class ConstantExpression:
 
 @dataclass
 class LeftShiftExpression:
-    variable: "Expression"
-    shift: "Expression"
+    variable: Expression
+    shift: Expression
 
     def evaluate(self, circuit: Circuit) -> int:
         return self.variable.evaluate(circuit) << self.shift.evaluate(circuit)
@@ -35,7 +35,7 @@ class LeftShiftExpression:
 
 @dataclass
 class NotExpression:
-    underlying: "Expression"
+    underlying: Expression
 
     def evaluate(self, circuit: Circuit) -> int:
         return 0xFFFF - self.underlying.evaluate(circuit)
@@ -43,8 +43,8 @@ class NotExpression:
 
 @dataclass
 class OrExpression:
-    lhs: "Expression"
-    rhs: "Expression"
+    lhs: Expression
+    rhs: Expression
 
     def evaluate(self, circuit: Circuit) -> int:
         return self.lhs.evaluate(circuit) | self.rhs.evaluate(circuit)
@@ -52,8 +52,8 @@ class OrExpression:
 
 @dataclass
 class RightShiftExpression:
-    variable: "Expression"
-    shift: "Expression"
+    variable: Expression
+    shift: Expression
 
     def evaluate(self, circuit: Circuit) -> int:
         return self.variable.evaluate(circuit) >> self.shift.evaluate(circuit)
