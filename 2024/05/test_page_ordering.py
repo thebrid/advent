@@ -65,7 +65,7 @@ def _reorder_pages(update: Update, rules: Rules) -> Update:
             return 1
         return 0
 
-    return list(sorted(update, key=cmp_to_key(_compare)))
+    return sorted(update, key=cmp_to_key(_compare))
 
 
 def reorder_pages(input_str: str) -> int:

@@ -84,7 +84,7 @@ def _run_step(hash_map: list[list[Lens]], step: Step) -> None:
 
     added = False
 
-    for lens_index, lens in enumerate(bucket):
+    for lens in bucket:
         if lens.label == step.label:
             lens.focal_length = step.focal_length
             added = True

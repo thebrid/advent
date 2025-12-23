@@ -50,7 +50,7 @@ def _find_antinodes_for_frequency(coords: list[Coord], size: Coord, repeat: bool
 def _find_antinodes(antenna_map: AntennaMap, size: Coord, repeat: bool) -> set[Coord]:
     output = set[Coord]()
 
-    for _, coords in antenna_map.items():
+    for coords in antenna_map.values():
         output |= _find_antinodes_for_frequency(coords, size, repeat)
 
     return output

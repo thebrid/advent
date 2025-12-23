@@ -35,7 +35,9 @@ def _parse_input(input_string: str) -> Iterable[Race]:
     durations = [int(token) for token in lines[0][first_line_colon + 1 :].split()]
     record_distances = [int(token) for token in lines[1][second_line_colon + 1 :].split()]
 
-    return [Race(duration, record_distance) for duration, record_distance in zip(durations, record_distances)]
+    return [
+        Race(duration, record_distance) for duration, record_distance in zip(durations, record_distances, strict=True)
+    ]
 
 
 EXAMPLE_INPUT = """Time:      7  15   30

@@ -1025,7 +1025,7 @@ def _parse_input(input_data: str) -> tuple[list[int], list[int]]:
 
 def list_comparison(input_data: str) -> int:
     list1, list2 = _parse_input(input_data)
-    return sum(abs(item1 - item2) for item1, item2 in zip(sorted(list1), sorted(list2)))
+    return sum(abs(item1 - item2) for item1, item2 in zip(sorted(list1), sorted(list2), strict=True))
 
 
 def similarity_score(input_data: str) -> int:

@@ -37,7 +37,7 @@ def _count_steps(instructions: str, camel_map: CamelMap) -> int:
 
 
 def _count_steps_with_ghosts(instructions: str, camel_map: CamelMap) -> int:
-    cycles = [_compute_cycle(instructions, camel_map, key) for key in camel_map.keys() if key[-1] == "A"]
+    cycles = [_compute_cycle(instructions, camel_map, key) for key in camel_map if key[-1] == "A"]
     print(f"{cycles=}")
     return lcm(*cycles)
 

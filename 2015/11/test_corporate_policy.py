@@ -51,7 +51,7 @@ def next_valid_password(current_password: str) -> str | None:
 
 
 def generate_passwords(current_password: str) -> Iterable[str]:
-    codes = list(ord(char) for char in current_password)
+    codes = [ord(char) for char in current_password]
 
     while True:
         increment(codes)

@@ -143,13 +143,10 @@ def _extract_grove_coordinates(linked_list: LinkedList) -> int:
 
     head = linked_list.head
 
-    for i in range(3001):
+    for _ in range(3001):
         digits_in_order.append(current_node.value)
 
-        if current_node.next is None:
-            current_node = head
-        else:
-            current_node = current_node.next
+        current_node = head if current_node.next is None else current_node.next
 
     return sum([digits_in_order[1000], digits_in_order[2000], digits_in_order[3000]])
 
@@ -167,10 +164,7 @@ def _find_zero(linked_list: LinkedList) -> Node:
 
 
 def move(node: Node, linked_list: LinkedList, list_length: int) -> None:
-    if node.value < 0:
-        moves_needed = node.value % (list_length - 1)
-    else:
-        moves_needed = node.value % (list_length - 1)
+    moves_needed = node.value % (list_length - 1)
 
     while moves_needed > 0:
         old_next = node.next

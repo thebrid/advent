@@ -89,9 +89,9 @@ def _count_combinations_unknown(
 @mark.parametrize(
     ("damaged", "contiguous", "expected_output"),
     [
-        ("", tuple(), 1),
-        (".", tuple(), 1),
-        ("#", tuple(), 0),
+        ("", (), 1),
+        (".", (), 1),
+        ("#", (), 0),
         ("#", (1,), 1),
         ("???.###", (1, 1, 3), 1),
         (".??..??...?##.", (1, 1, 3), 4),

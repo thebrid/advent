@@ -76,7 +76,7 @@ def _parse_maps(lines: list[str]) -> list[list[RangeMap]]:
 
     for line in lines:
         if not line:
-            current_map = list(sorted(current_map))
+            current_map = sorted(current_map)
             output.append(current_map)
             current_map = list[RangeMap]()
             continue
@@ -88,7 +88,7 @@ def _parse_maps(lines: list[str]) -> list[list[RangeMap]]:
         new_range = RangeMap(dest_start=dest_start, source_start=source_start, range_length=range_length)
         current_map.append(new_range)
 
-    current_map = list(sorted(current_map))
+    current_map = sorted(current_map)
     output.append(current_map)
     return output
 

@@ -83,7 +83,7 @@ TEST_INT_SNAFU_MAP = {
 }
 
 
-@mark.parametrize(("input_int", "expected_snafu"), [(integer, snafu) for integer, snafu in TEST_INT_SNAFU_MAP.items()])
+@mark.parametrize(("input_int", "expected_snafu"), TEST_INT_SNAFU_MAP.items())
 def test_int_to_snafu(input_int: int, expected_snafu: str) -> None:
     assert int_to_snafu(input_int) == expected_snafu
 

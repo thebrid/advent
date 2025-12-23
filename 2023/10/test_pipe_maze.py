@@ -30,13 +30,13 @@ PIPE_MAP = {
 
 
 def pipe_maze_furthest_distance(input_string: str, start_loc: Point) -> int:
-    maze = [[char for char in line] for line in input_string.splitlines()]
+    maze = [list(line) for line in input_string.splitlines()]
     distances = _compute_distances(maze, start_loc)
     return max(value for value in chain.from_iterable(distances) if value is not None)
 
 
 def pipe_maze_inside_loop(input_string: str, start_loc: Point) -> int:
-    maze = [[char for char in line] for line in input_string.splitlines()]
+    maze = [list(line) for line in input_string.splitlines()]
     return sum(1 if cell else 0 for cell in chain.from_iterable(_compute_inside(maze, start_loc)))
 
 
