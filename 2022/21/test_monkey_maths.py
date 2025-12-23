@@ -54,7 +54,7 @@ def compute_human_number(equations: dict[str, Equation], lhs: str, rhs: str) -> 
 
 
 def _make_equal(equations: dict[str, Equation], values: dict[str, int | None], item: str, target: int) -> int:
-    match (equations[item]):
+    match equations[item]:
         case Operation(lhs, rhs, callable):
             if values[lhs] is None:
                 if values[rhs] is None:
@@ -104,7 +104,7 @@ def _evaluate(nodes: list[str], equations: dict[str, Equation]) -> dict[str, int
 
         current_value = equations[current_key]
 
-        match (current_value):
+        match current_value:
             case Constant(value):
                 values[current_key] = value
             case Operation(lhs, rhs, func):

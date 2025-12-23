@@ -48,21 +48,21 @@ def _get_player_choice(player: str, opponent_choice: Choice) -> Choice:
     if player == "Y":
         return opponent_choice
 
-    match (opponent_choice):
+    match opponent_choice:
         case Choice.Rock:
-            match (player):
+            match player:
                 case "X":
                     return Choice.Scissors
                 case "Z":
                     return Choice.Paper
         case Choice.Paper:
-            match (player):
+            match player:
                 case "X":
                     return Choice.Rock
                 case "Z":
                     return Choice.Scissors
         case Choice.Scissors:
-            match (player):
+            match player:
                 case "X":
                     return Choice.Paper
                 case "Z":
@@ -72,9 +72,9 @@ def _get_player_choice(player: str, opponent_choice: Choice) -> Choice:
 
 
 def _get_player_score(opponent_choice: Choice, player_choice: Choice) -> int:
-    match (opponent_choice):
+    match opponent_choice:
         case Choice.Rock:
-            match (player_choice):
+            match player_choice:
                 case Choice.Rock:
                     return 3
                 case Choice.Paper:
@@ -82,7 +82,7 @@ def _get_player_score(opponent_choice: Choice, player_choice: Choice) -> int:
                 case Choice.Scissors:
                     return 0
         case Choice.Paper:
-            match (player_choice):
+            match player_choice:
                 case Choice.Rock:
                     return 0
                 case Choice.Paper:
@@ -90,7 +90,7 @@ def _get_player_score(opponent_choice: Choice, player_choice: Choice) -> int:
                 case Choice.Scissors:
                     return 6
         case Choice.Scissors:
-            match (player_choice):
+            match player_choice:
                 case Choice.Rock:
                     return 6
                 case Choice.Paper:
