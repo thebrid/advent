@@ -14,7 +14,7 @@ def _is_safe_raw(report: Report) -> bool:
     for i in range(1, len(report)):
         difference = report[i] - report[i - 1]
 
-        if min_difference is None:
+        if min_difference is None or max_difference is None:
             max_difference = abs(difference)
             min_difference = abs(difference)
         else:
