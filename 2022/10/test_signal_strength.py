@@ -51,7 +51,7 @@ def _interpret_instructions(instructions: Iterable[Instruction]) -> Iterable[int
     x = 1
 
     for instruction in instructions:
-        match (instruction):
+        match instruction:
             case AddX(_):
                 yield x
                 yield x
