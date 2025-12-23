@@ -26,12 +26,11 @@ def container_combinations(containers: list[int], amount: int) -> list[list[int]
     if not containers:
         return []
 
-    output = []
+    output = list[list[int]]()
 
     if amount >= containers[0]:
         remaining_combinations = container_combinations(containers[1:], amount - containers[0])
-        for remaining_combination in remaining_combinations:
-            output.append([containers[0]] + remaining_combination)
+        output.extend([containers[0]] + remaining_combination for remaining_combination in remaining_combinations)
 
     output.extend(container_combinations(containers[1:], amount))
 

@@ -51,7 +51,7 @@ def get_point_leader(raw_input: str, num_seconds: int) -> int:
     points: MutableMapping[str, int] = defaultdict(int)
     herd = parse_input(raw_input)
 
-    for s in range(num_seconds):
+    for _ in range(num_seconds):
         for reindeer in herd:
             reindeer.advance_one_second()
 

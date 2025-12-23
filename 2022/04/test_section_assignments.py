@@ -31,10 +31,7 @@ def _do_ranges_fully_overlap(assignment_pair: tuple[Range, Range]) -> bool:
     if first.begin <= second.begin and first.end >= second.end:
         return True
 
-    if second.begin <= first.begin and second.end >= first.end:
-        return True
-
-    return False
+    return second.begin <= first.begin and second.end >= first.end
 
 
 def _do_ranges_partly_overlap(assignment_pair: tuple[Range, Range]) -> bool:
@@ -43,10 +40,7 @@ def _do_ranges_partly_overlap(assignment_pair: tuple[Range, Range]) -> bool:
     if first.begin <= second.end and first.end >= second.begin:
         return True
 
-    if second.begin <= first.end and second.end >= first.begin:
-        return True
-
-    return False
+    return second.begin <= first.end and second.end >= first.begin
 
 
 count_section_assignments_with_full_overlap = partial(
