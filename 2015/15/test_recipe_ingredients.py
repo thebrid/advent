@@ -14,7 +14,7 @@ class Ingredient:
     texture: int
     calories: int
 
-    def __mul__(self, other: object) -> "Ingredient":
+    def __mul__(self, other: object) -> Ingredient:
         if type(other) is not int:
             return NotImplemented
 
@@ -27,7 +27,7 @@ class Ingredient:
             calories=self.calories * other,
         )
 
-    def __iadd__(self, other: object) -> "Ingredient":
+    def __iadd__(self, other: object) -> Ingredient:
         if type(other) is not Ingredient:
             return NotImplemented
 
